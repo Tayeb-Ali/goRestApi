@@ -20,7 +20,7 @@ type Book struct {
 // Author Struct
 type Author struct {
 	Firstname		string		`json:"firstname"`
-	Lastname		string		`json:"lasttname"`
+	Lastname		string		`json:"lastname"`
 }
 
 //Init books var as a sclice book struct
