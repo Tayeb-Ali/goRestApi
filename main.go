@@ -18,9 +18,9 @@ import (
 
 //Book Stuct (Model)
 type Book struct {
-	ID 		 string `json:"id"`
-	Isbn     string `json:"isbn"`
-	Title	 string `json:"title"`
+	ID 		 string  `json:"id"`
+	Isbn     string  `json:"isbn"`
+	Title	 string  `json:"title"`
 	Author	 *Author `json:"author"`
 }
 
@@ -29,6 +29,9 @@ type Author struct {
 	Firstname		string		`json:"firstname"`
 	Lastname		string		`json:"lasttname"`
 }
+
+//Init books var as a sclice book struct
+var books []Book
 
 // Get All Books
 func getBooks(w  http.ResponseWriter, r *http.Request) {
@@ -56,6 +59,12 @@ func deleteBook(w  http.ResponseWriter, r *http.Request) {
 func main()  {
 	//Init Router
 	r:= mux.NewRouter()
+
+	// Mock Data - @todo - implement DB
+	books = append(books, Book{ID: "1", Isbn: "324245", Title: "Book One", Author: &Author{Firstname: "Elteyab", Lastname: "Ali"}})
+books = append(books, Book{ID: "2", Isbn: "80823", Title: "Book Two", Author: &Author{Firstname: "Hassan", Lastname: "Omer "}})
+books = append(books, Book{ID: "3", Isbn: "86788", Title: "Book Three", Author: &Author{Firstname: "Omer", Lastname: "Khalid "}})
+books = append(books, Book{ID: "3", Isbn: "1234567", Title: "Book Fore", Author: &Author{Firstname: "Mudether", Lastname: "Ghade "}})
 
 	//Route Handlers /Endpoints
 	r.HandleFunc("/api/books", getBooks).Methods("GET")
