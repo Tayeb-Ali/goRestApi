@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"log"
 	"net/http"
-	// "math/rand"
-	// "strconv"
+	"math/rand"
+	"strconv"
 	"github.com/gorilla/mux"
 )
 
@@ -46,7 +46,12 @@ func getBook(w  http.ResponseWriter, r *http.Request) {
 }
 // Create a New Books
 func createBook(w  http.ResponseWriter, r *http.Request) {
-
+	w.Header().Set("Content-Type", "application/json")
+	var book Book
+	_ = json.NewDecoder(r.Body).Decode(&book)
+	book.ID = strconv.Itoa(rand.Intn(1000000)) // just Mock Id
+	books = append(books, book)
+	json.NewEncoder(w).Encode(book)
 }
 // Update  Books
 func updateBook(w  http.ResponseWriter, r *http.Request) {
