@@ -77,8 +77,8 @@ books = append(books, Book{ID: "3", Isbn: "1234567", Title: "Book Fore", Author:
 	//Route Handlers /Endpoints
 	r.HandleFunc("/api/books", getBooks).Methods("GET")
 	r.HandleFunc("/api/book/{id}", getBook).Methods("GET")
-	r.HandleFunc("/api/books", createBook).Methods("POST")
-	r.HandleFunc("/api/books", updateBook).Methods("PUT")
-	r.HandleFunc("/api/books", deleteBook).Methods("DELETE")
+	r.HandleFunc("/api/book", createBook).Methods("POST")
+	r.HandleFunc("/api/book", updateBook).Methods("PUT")
+	r.HandleFunc("/api/book", deleteBook).Methods("DELETE")
 	log.Fatal(http.ListenAndServe(":8000", r))
 }
