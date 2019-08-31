@@ -16,6 +16,8 @@ go build
 ```
 
 ## Endpoints
+    I think after this experiment, the Golan is just Bullshit HHH.
+    friends, please keep using PHP or Django or nodeTs
 
 ### Get All Books
 ``` bash
