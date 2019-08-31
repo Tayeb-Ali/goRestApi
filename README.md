@@ -25,17 +25,17 @@ GET api/books
 ```
 ### Get Single Book
 ``` bash
-GET api/books/{id}
+GET api/book/{id}
 ```
 
 ### Delete Book
 ``` bash
-DELETE api/books/{id}
+DELETE api/book/{id}
 ```
 
 ### Create Book
 ``` bash
-POST api/books
+POST api/book
 
 # Request sample
 # {
@@ -47,7 +47,7 @@ POST api/books
 
 ### Update Book
 ``` bash
-PUT api/books/{id}
+PUT api/book/{id}
 
 # Request sample
 # {
